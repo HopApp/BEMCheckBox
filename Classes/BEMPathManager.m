@@ -17,8 +17,10 @@
     switch (self.boxType) {
         case BEMBoxTypeSquare:
             path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, self.size, self.size) cornerRadius:3.0];
-            [path applyTransform:CGAffineTransformRotate(CGAffineTransformIdentity, M_PI / 2)];
-            [path applyTransform:CGAffineTransformMakeTranslation(self.size, 0)];
+            
+            // comment out to fix rendering defect on iPhone 6 and 6+
+            //[path applyTransform:CGAffineTransformRotate(CGAffineTransformIdentity, M_PI / 2)];
+            //[path applyTransform:CGAffineTransformMakeTranslation(self.size, 0)];
             break;
             
         default: {
